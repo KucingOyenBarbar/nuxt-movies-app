@@ -31,3 +31,17 @@ type GetStreams = {
   url: string;
   resolutions: string[];
 };
+
+type Genre = {
+  parameter: string;
+  name: string;
+  numberOfContents: number;
+  url: string;
+};
+
+type Country = {
+  parameter: string;
+  name: string;
+  numberOfContents: number;
+  url: string;
+};

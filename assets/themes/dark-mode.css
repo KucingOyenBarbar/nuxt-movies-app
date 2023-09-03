@@ -1,4 +1,8 @@
 .dark-mode body {
-  background-color: #010204;
-  color: #fafafa;
+  background-color: #0B0A0A;
+  color: #ECEBE8;
+}
+
+.dark-mode .navbar {
+  background-color: #0B0A0A;
 }

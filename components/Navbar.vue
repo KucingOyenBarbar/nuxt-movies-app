@@ -1,11 +1,15 @@
 <template>
-  <nav class="navbar navbar-expand-lg sticky-top navbar-white ">
+  <nav class="navbar navbar-expand-lg sticky-top navbar-white border-dark border-bottom ">
     <div class="container">
-      <a class="navbar-brand text-white" href="#">
-        <NuxtImg class="d-inline-block align-text-top me-1" src='/img/icon-green.png' :width="40" :height="40"
-          alt="Logo" />
-        Nuxt Movies
-      </a>
+
+      <NuxtLink to="/" aria-label="Navbar Link" class="navbar-brand text-white">
+        <NuxtImg class="d-inline-block align-text-top" src='/img/icon-green.png' :width="40" :height="40" alt="Logo" />
+        Nuxt
+        <span>
+          Movies
+        </span>
+      </NuxtLink>
+
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNavigation"
         aria-controls="mobileNavigation" aria-expanded="false" aria-label="Toggle navigation">
         <!-- <span class="navbar-toggler-icon "></span> -->
@@ -29,8 +33,6 @@
           <NuxtLink
             :class="`nav-link mx-md-2 ${useRoute().path === '/genre ' ? 'text-white' : 'text-white-50'}  fst-normal fs-6`"
             to="/genre  ">Genre</NuxtLink>
-
-
         </div>
       </div>
     </div>
@@ -50,7 +52,7 @@ const onNavbarScroll = () => {
   const scrollY = window.scrollY
   const navbar = document.querySelector('.navbar')
 
-  if (scrollY > 300) {
+  if (scrollY > 50) {
     navbar?.classList.add('sticky-shadow')
   } else {
     navbar?.classList.remove('sticky-shadow')
@@ -66,7 +68,9 @@ const route = useRoute()
   width: 100%;
   min-height: auto;
   height: auto;
-  background-color: #000;
+  /* background-color: #000; */
+  background-color: #0B0A0A;
+  color: #ECEBE8;
   transition: ease 300ms;
 }
 
@@ -74,6 +78,13 @@ const route = useRoute()
   font-size: 28px;
   font-style: normal;
   letter-spacing: 1px;
+}
+
+.navbar .navbar-brand span {
+  color: #00bd6f;
+  font-size: 26px;
+  margin-left: -10px;
+  text-transform: capitalize;
 }
 
 .navbar.sticky-shadow {

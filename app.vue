@@ -19,8 +19,8 @@
 
 html,
 body {
-  background: #EEF1F4 !important;
-  color: #17181B;
+  /* background: #EEF1F4 !important;
+  color: #17181B; */
   width: 100%;
   min-height: 100vh;
 }
