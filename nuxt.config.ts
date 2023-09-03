@@ -14,4 +14,6 @@ export default defineNuxtConfig({
     'nuxt-bootstrap-icons',
     'nuxt-swiper',
   ],
+
+  css: ['~/assets/css/global.css'],
 });

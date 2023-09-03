@@ -1,7 +1,27 @@
 <template>
   <NuxtLayout>
+    <Navbar />
     <NuxtLoadingIndicator />
     <!-- <NuxtWelcome /> -->
     <NuxtPage />
   </NuxtLayout>
 </template>
+
+<style>
+:root {
+  font-synthesis: none;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  background: #EEF1F4 !important;
+  color: #17181B;
+  width: 100%;
+  min-height: 100vh;
+}
+</style>
