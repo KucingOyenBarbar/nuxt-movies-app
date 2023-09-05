@@ -4,6 +4,7 @@
   <div class="row justify-content-center g-2">
     <div class="col-12 col-lg-8 col-sm-12">
 
+      {{ moviesId }}
       <div class="row justify-content-start g-2">
         <div class="col">
           <div class="card rounded-0 mb-3 nm-card-items">
@@ -86,10 +87,13 @@ import MovieVideo from '~/components/movies/videos/MovieVideo.vue';
 
 const route: RouteLocationNormalizedLoaded = useRoute()
 const { apiBaseUrl } = useConfig()
-const { movieId } = route.params
+const movieId = route.params.movieId.toString()
+
 const { data: movie, error, pending } = await useAsyncData<Movies>(`/movies/${movieId}`, () => $fetch(`/movies/${movieId}`, {
   baseURL: apiBaseUrl,
+
 }))
+
 const { data: streams } = await useAsyncData<GetStreams[]>(`/movies/${movieId}/streams`, () => $fetch(`/movies/${movieId}/streams`, {
   baseURL: apiBaseUrl
 }))
