@@ -1,9 +1,9 @@
 <template>
-  <div class="row justify-content-start g-3 py-3">
+  <div class="row justify-content-start g-3">
     <div class="col">
       <div class="vstack gap-3 mb-3">
-        <MovieVideoTrailer v-if="isMovieTrailer && !isMoviePlaying" :vidio_id="vidio_id" :title="movie.title" />
-        <MovieVideoStreaming v-if="isMoviePlaying && !isMovieTrailer" :streams="streams" :title="movie.title" />
+        <MoviesVideosMovieVideoStreaming v-if="isMoviePlaying && !isMovieTrailer" :streams="streams" />
+        <MoviesVideosMovieVideoTrailer v-if="isMovieTrailer && !isMoviePlaying" :vidio_id="vidio_id" />
       </div>
     </div>
   </div>
@@ -11,8 +11,6 @@
 
 <script lang="ts" setup>
 import { PropType } from 'vue'
-import MovieVideoStreaming from "./MovieVideoStreaming.vue"
-import MovieVideoTrailer from './MovieVideoTrailer.vue';
 
 const props = defineProps({
   isMovieTrailer: { type: Boolean }, isMoviePlaying: { type: Boolean },

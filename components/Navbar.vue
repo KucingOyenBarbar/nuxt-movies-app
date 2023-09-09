@@ -26,13 +26,14 @@
             to="/">Beranda</NuxtLink>
           <NuxtLink
             :class="`nav-link mx-md-2 ${useRoute().path === '/movie' ? 'text-white' : 'text-white-50'}  fst-normal fs-6`"
-            to="/movie">Movie</NuxtLink>
+            to="/movie">Film</NuxtLink>
           <NuxtLink
             :class="`nav-link mx-md-2 ${useRoute().path === '/series' ? 'text-white' : 'text-white-50'}  fst-normal fs-6`"
-            to="/series">Series</NuxtLink>
+            to="/series">Drama</NuxtLink>
           <NuxtLink
-            :class="`nav-link mx-md-2 ${useRoute().path === '/genre ' ? 'text-white' : 'text-white-50'}  fst-normal fs-6`"
-            to="/genre  ">Genre</NuxtLink>
+            :class="`nav-link mx-md-2 ${useRoute().path === '/series' ? 'text-white' : 'text-white-50'}  fst-normal fs-6`"
+            to="/series">Tentang Kami</NuxtLink>
+
         </div>
       </div>
     </div>

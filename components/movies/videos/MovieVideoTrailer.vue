@@ -6,10 +6,7 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
     </div>
-    <div class="d-flex flex-wrap pt-3">
 
-      <h5 class="text-white-50 text-uppercase fst-normal">Nonton Trailer {{ title }}</h5>
-    </div>
   </div>
 </template>
 
