@@ -46,7 +46,7 @@
         <div class="col">
           <div class="d-flex justify-content-between mb-2">
             <MoviesMovieHeadingTitle title="Film Rating Teratas" />
-            <MoviesMovieLink :title="'Selengkapnya'" :links="'/movie/popular'">
+            <MoviesMovieLink :title="'Selengkapnya'" :links="'/movie/top-rated'">
               <BootstrapIcon name="chevron-right" class="ms-1" />
             </MoviesMovieLink>
           </div>
@@ -76,6 +76,7 @@ const { data: latestMovies, error } = await useFetchDataMovie({ baseUrl: API, en
 const { data: popularMovies, error: popularMoviesError } = await useFetchDataMovie({ baseUrl: API, endpoint: 'popular/movies', pageParams: 1 })
 const { data: topMovies, error: topMoviesError } = await useFetchDataMovie({ baseUrl: API, endpoint: 'top-rated/movies', pageParams: 1 })
 
-
 </script>
- 
+
+
+

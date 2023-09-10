@@ -1,25 +1,34 @@
 <template>
-  <div class="row justify-content-start g-2">
-    <div class="col">
-      <MoviesMovieHeadingTitle title="Semua Film Populer Saat Ini" />
-      <MoviesMovieItemList :movies="movies" />
-    </div>
+  <div class="container">
+
+    <section class="movie-section position-relative py-5">
+      <MoviesMovieHeadingTitle title="Film Terpopuler" />
+      <div v-show="error">
+        {{ error?.statusCode }} <br />
+        {{ error?.stack }}
+      </div>
+      <div v-show="!error"
+        class="row justify-content-start row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-4 row-cols-xxl-6 g-3 pt-3">
+        <div class="col" v-for="movie in movies" :key="movie._id">
+          <MoviesMovieItem :movieId="movie._id" :title="movie.title" :featuredImageUrl="movie.posterImg" />
+        </div>
+      </div>
+    </section>
+
   </div>
 </template>
 
 <script lang="ts" setup>
+import { API } from "~/utils/config/api"
+
 useSeoMeta({
-  title: 'Semua Film Populer Saat Ini',
-  ogTitle: "Semua Film Populer Saat Ini",
-  description: ""
+  title: 'Film Terpopuler',
+  ogTitle: "Film Terpopuler",
+  description: "Semua Daftar Film Terpopuler Terbaru & Terlengkap"
 })
 
-const { apiBaseUrl } = useConfig()
+const pageParams = ref(1) as globalThis.Ref<number>
 
-const { data: movies, pending, error } = useFetch<GetMovies[]>('/popular/movies', {
-  lazy: true,
-  baseURL: apiBaseUrl,
-})
+const { data: movies, error } = await useFetchDataMovie({ baseUrl: API, endpoint: 'popular/movies', pageParams: pageParams.value })
 
 </script>
-
