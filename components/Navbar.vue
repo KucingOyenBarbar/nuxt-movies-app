@@ -53,8 +53,6 @@ const onNavbarScroll = () => {
   const scrollY = window.scrollY
   const navbar = document.querySelector('.navbar')
 
-  console.log(scrollY)
-
   if (scrollY > 50) {
     navbar?.classList.add('sticky-shadow')
   } else {

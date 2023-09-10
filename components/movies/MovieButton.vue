@@ -2,11 +2,13 @@
   <div class="row justify-content-start g-3">
     <div class="col">
       <div class="hstack gap-2">
-        <button @click="movieTrailer" type="button" :class="`btn btn-sm btn-dark rounded `">
+        <button @click="movieTrailer" type="button"
+          :class="`btn btn-md btn-dark rounded-pill text-white-50 text-center `">
           <BootstrapIcon name="youtube" /> Tonton
           Trailer
         </button>
-        <button @click="playingMovie" type="button" :class="`btn btn-sm btn-dark rounded `">
+        <button @click="playingMovie" type="button"
+          :class="`btn btn-md btn-dark rounded-pill text-white-50 text-center `">
           <BootstrapIcon name="play-circle" />
           Menonton
         </button>

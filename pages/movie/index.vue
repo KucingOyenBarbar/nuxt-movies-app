@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-
-
     <section class="movie-section position-relative py-5">
       <MoviesMovieHeadingTitle title="Semua Daftar Film Terbaru & Telengkap" />
       <div v-show="error">
